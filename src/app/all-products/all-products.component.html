@@ -1,4 +1,11 @@
 <h2> WSZYSTKIE: </h2>
 <div class="row">
-<app-product *ngFor="let product of products, index as i" [product]="product" class="col-md-4"></app-product>
+  <div class="checkbox">
+      <input type="checkbox" class="" id="promo" value="promo" (change)="newList()" [checked]='promo'>
+       <label class="">Tylko promocje</label>
+  </div>
+</div>
+
+<div class="row">
+  <app-product *ngFor="let product of products, index as i" [product]="product" [promoted]="promo" class="col-md-4"></app-product>
 </div>

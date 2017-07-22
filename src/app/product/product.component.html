@@ -1,4 +1,4 @@
-<div class="card" style="width: 20rem;" [class.promoted]="product.promoted">
+<div [class.hidden]="!product.promoted&& promoted" class="card" style="width: 20rem;" [class.promoted]="product.promoted">
   <img class="img-fluid" src="/assets/products/{{product.image}}">
   <div class="card-block">
     <h4 class="card-title">{{ product.name }}</h4>
@@ -6,3 +6,4 @@
     <a href="#" class="btn btn-primary">Kup TERAZ {{ product.price }} PLN</a>
   </div>
 </div>
+

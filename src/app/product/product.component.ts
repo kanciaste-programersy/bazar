@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   constructor() { }
   
   @Input() public product;
+  @Input() public promoted;
   @Input() public index;
 
   ngOnInit() {

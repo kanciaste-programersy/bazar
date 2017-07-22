@@ -8,10 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AllProductsComponent implements OnInit {
 
   @Input() public products;
+  public promo = false;
   
   constructor() { }
 
   ngOnInit() {
   }
+
+  newList(){
+    this.promo=!this.promo
+    console.log(this.promo)
+}
 
 }
