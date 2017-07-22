@@ -1,11 +1,22 @@
 <h2> WSZYSTKIE: </h2>
 <div class="row">
   <div class="checkbox">
-      <input type="checkbox" class="" id="promo" value="promo" (change)="newList()" [checked]='promo'>
+      <input type="checkbox" class="" id="promo" value="promo" (change)="newList()" [checked]='promo' >
        <label class="">Tylko promocje</label>
   </div>
 </div>
 
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="search" class="col-sm-3 control-label" >Szukaj</label>
+             <div class="col-sm-9">
+              <!--p-inputMask mask="99.99" class="col-sm-4"   placeholder="00.00" slotChar="00.00" id="updateReproTime" name="updateReproTime" formControlName="updateReproTime" (keypress)="newTotalTime(+this.reproOrderForm.controls['updateReproTime'].value.replace(':','.'))"></p-inputMask-->
+              <input type="text" class="form-control"  id="search"  name="search" [formControl]="searchterm">
+            </div>
+            </div>
+          </div>
+
+
 <div class="row">
-  <app-product *ngFor="let product of products | productsFilter:promo" [product]="product" class="col-md-4"></app-product>
+  <app-product *ngFor="let product of collection | productsFilter:promo" [product]="product" class="col-md-4"></app-product>
 </div>
