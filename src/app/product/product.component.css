@@ -1,3 +1,7 @@
-.hidden{
-    display: none;
+
+.hidden{    display: none;
+}
+:host div.card.promoted {
+    background-color: yellowgreen;
+
 }
