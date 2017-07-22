@@ -1,3 +1,8 @@
-<p>
-  all-products works!
-</p>
+<table class="table table-striped">
+  <th>Nazwa</th>
+  <th>Cena</th>
+  <tr *ngFor="product of products">
+    <td [class.promoted]="product.bg-info">{{product.name}} </td>
+    <td>{{product.price}} </td>
+    </tr>
+</table>
