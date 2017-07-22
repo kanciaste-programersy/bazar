@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import { ProductsFilterPipe } from './ProductsFilterPipe';
 import {ProductRepository} from './product/product.repository';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ProductRepository} from './product/product.repository';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [ProductRepository],
   bootstrap: [AppComponent]
