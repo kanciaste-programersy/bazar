@@ -9,13 +9,16 @@ import { Product } from '../product.interface';
 export class AllProductsComponent implements OnInit {
 
   @Input() public products: Array<Product>;
-  public collection = this.products;
   public promo = false;
 
   
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleSorted(productsSorted) {
+    this.products = productsSorted;
   }
 
   newList(){

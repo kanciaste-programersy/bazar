@@ -7,13 +7,15 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 import { ProductsFilterPipe } from './ProductsFilterPipe';
+import { SorterComponent } from './sorter/sorter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     AllProductsComponent,
-    ProductsFilterPipe
+    ProductsFilterPipe,
+    SorterComponent
   ],
   imports: [
     BrowserModule,

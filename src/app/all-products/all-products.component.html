@@ -1,4 +1,4 @@
-<h2> WSZYSTKIE: </h2>
+<app-sorter #sorter [products]="products" (productsSorted)="handleSorted($event)"></app-sorter>
 <div class="row">
   <div class="checkbox">
       <input type="checkbox" class="" id="promo" value="promo" (change)="newList()" [checked]='promo'>
