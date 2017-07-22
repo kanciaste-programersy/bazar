@@ -11,8 +11,6 @@ export class AllProductsComponent implements OnInit {
   
   constructor() { }
 
-  @Input() public products;
-
   ngOnInit() {
   }
 
