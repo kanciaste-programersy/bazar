@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { AllProductsComponent } from './all-products/all-products.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { ProductsFilterPipe } from './ProductsFilterPipe';
+import {ProductRepository} from './product/product.repository';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ProductsFilterPipe } from './ProductsFilterPipe';
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductRepository],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
