@@ -8,6 +8,7 @@ import {Product} from './product/product.class';
 })
 export class AppComponent {
     public products = [];
+    public filteredProducts = [];
     public promoted = [];
 
     constructor() {
@@ -17,16 +18,28 @@ export class AppComponent {
                     'http://lorempixel.com/250/250/?rand=' + i,
                     'Product number ' + i,
                     'jakiś tam opis ' + 1,
-                    20.5,
+                    parseFloat((Math.random() * 1000).toFixed(2)),
                     (Boolean)(Math.random() * 2)
                 )
             );
         }
-        let index = Math.random() * this.products.length;
+        this.filteredProducts = this.products;
         this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
         this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
         this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
         this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
     }
+
+    public onFilter(event) {
+        this.filteredProducts = this.products.filter(
+            (value, index, opts) => {
+                return value.name.includes(event) ||
+                    value.price.toString().includes(event) ||
+                    value.desc.includes(event)
+                    ;
+            }
+        );
+    }
 }
+
 

@@ -5,5 +5,6 @@
   <app-product-list [products]="promoted"></app-product-list>
 
   <h1>Wszystkie produkty</h1>
-  <app-product-list [products]="products"></app-product-list>
+  <app-product-list-filter (filter)="onFilter($event)"></app-product-list-filter>
+  <app-product-list [products]="filteredProducts"></app-product-list>
 </div>

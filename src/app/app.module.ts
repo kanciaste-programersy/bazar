@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {ProductListComponent} from './product-list.component';
 import {ProductTileComponent} from './product.component';
+import {ProductListFilterComponent} from './product-list-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
       AppComponent,
       ProductTileComponent,
-      ProductListComponent
+      ProductListComponent,
+      ProductListFilterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
