@@ -1,1 +1,2 @@
-<app-all-products [products]="products"></app-all-products>
+<p>Enter text: <input type="text" (change)="filterByName($event)"></p>
+<app-all-products [products]="displayed"></app-all-products>
