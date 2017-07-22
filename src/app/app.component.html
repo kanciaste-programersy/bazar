@@ -1,3 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h2> Nazwa produktów: </h2>
+<div *ngFor="let product of products" [class.promoted]="product.promoted">
+  <h4> {{ product.name }}</h4>
+  <p>{{product.description}}</p>  </div>
+
 <ul>
 <li *ngFor="let product of productsList">{{ product.name }}</li>
 </ul>
