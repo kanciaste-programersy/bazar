@@ -32,6 +32,10 @@ export class AllProductsComponent implements OnInit {
     this.collection = this.products
   }
 
+  handleSorted(productsSorted: Array<Product>) {
+    this.collection = [...productsSorted];
+  }
+
   newList(){
     this.promo=!this.promo
     console.log(this.promo)
