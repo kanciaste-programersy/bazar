@@ -31,8 +31,8 @@ export class AllProductsComponent implements OnInit {
     this.collection = this.products
   }
 
-  handleSorted(productsSorted) {
-    this.products = productsSorted;
+  handleSorted(productsSorted: Array<Product>) {
+    this.collection = [...productsSorted];
   }
 
   newList(){
