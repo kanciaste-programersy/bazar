@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 public products: Array<Object> = [
-        {nazwa: 'fidget spinner', cena: 10.00, opis:'popularne w gimnazjum' },
-        {}
+        {name: 'fidget spinner', price: 10.00, description:'popularne w gimnazjum', promoted:true },
+        {name: 'piłka', price: 20.00, description:'Euro 2012', promoted:false}
     ];
 
   title = 'app';
