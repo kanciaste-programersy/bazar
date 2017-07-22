@@ -8,12 +8,20 @@ import { FormControl } from '@angular/forms';
 })
 export class ProductListFilterComponent {
     @Output() public filter = new EventEmitter();
-    public myInput = new FormControl();
+    @Output() public sort = new EventEmitter();
+    public filterControl = new FormControl();
+    public sortControl = new FormControl();
 
     constructor() {
-        this.myInput.valueChanges.subscribe(
+        this.filterControl.valueChanges.subscribe(
             value => {
                 this.filter.next(value);
+            }
+        );
+
+        this.sortControl.valueChanges.subscribe(
+            value => {
+                this.sort.next(value);
             }
         );
     }

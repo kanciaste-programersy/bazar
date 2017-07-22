@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <input type="text" [formControl]="myInput"/>
+      <input type="text" [formControl]="filterControl"/>
+      <select [formControl]="sortControl">
+        <option value="">default</option>
+        <option value="price-desc">price desc</option>
+        <option value="price-asc">price asc</option>
+      </select>
     </div>
   </div>
 </div>

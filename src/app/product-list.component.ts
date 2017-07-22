@@ -8,5 +8,4 @@ import {ProductInteface} from './product/product.interface';
 })
 export class ProductListComponent {
     @Input() public products: Array<ProductInteface>;
-    @Input() public filtering: Boolean = false;
 }

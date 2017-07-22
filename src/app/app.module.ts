@@ -6,6 +6,7 @@ import {ProductListComponent} from './product-list.component';
 import {ProductTileComponent} from './product.component';
 import {ProductListFilterComponent} from './product-list-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductRepository } from './service/ProductRepository';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
       ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+      ProductRepository
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Product} from './product/product.class';
+import {ProductRepository} from './service/ProductRepository';
 
 @Component({
     selector: 'app-root',
@@ -7,38 +7,25 @@ import {Product} from './product/product.class';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    public products = [];
     public filteredProducts = [];
     public promoted = [];
+    private filterText = '';
+    private productRepository: ProductRepository;
 
-    constructor() {
-        for (let i = 0; i < 15; i++) {
-            this.products.push(
-                new Product(
-                    'http://lorempixel.com/250/250/?rand=' + i,
-                    'Product number ' + i,
-                    'jakiś tam opis ' + 1,
-                    parseFloat((Math.random() * 1000).toFixed(2)),
-                    (Boolean)(Math.random() * 2)
-                )
-            );
-        }
-        this.filteredProducts = this.products;
-        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
-        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
-        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
-        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
+    constructor(productRepository: ProductRepository) {
+        this.productRepository = productRepository;
+        this.filteredProducts = this.productRepository.getProducts();
+        this.promoted = this.productRepository.getPromoted();
+
     }
 
     public onFilter(event) {
-        this.filteredProducts = this.products.filter(
-            (value, index, opts) => {
-                return value.name.includes(event) ||
-                    value.price.toString().includes(event) ||
-                    value.desc.includes(event)
-                    ;
-            }
-        );
+        this.filterText = event;
+        this.filteredProducts = this.productRepository.search(this.filterText);
+    }
+
+    public onSort(event) {
+        this.filteredProducts = this.productRepository.search(this.filterText, event);
     }
 }
 
