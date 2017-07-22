@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   }
 
   public onBuy (button) {
+      button.textContent = "KUPIONE";
       alert("Dziękujemy za zakupu. Właśnie wyczyściliśmy Twoją kartę kredytową.");
   }
 
