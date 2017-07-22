@@ -3,7 +3,7 @@
   <div class="card-block">
     <h4 class="card-title">{{ product.name }}</h4>
     <p class="card-text">{{product.description}}</p>
-    <a #button href="#" class="btn btn-primary" (click)="onBuy(button)">Kup TERAZ {{ product.price | currency:'PLN':true }}</a>
+    <a #button href="javascript:void(0);" class="btn btn-primary" (click)="onBuy(button)">Kup TERAZ {{ product.price | currency:'PLN':true }}</a>
   </div>
 </div>
 

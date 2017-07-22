@@ -10,17 +10,26 @@ import { ProductsFilterPipe } from './ProductsFilterPipe';
 import { SorterComponent } from './sorter/sorter.component';
 import {ProductRepository} from './product/product.repository';
 
+import { Routes, RouterModule } from '@angular/router';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
+const appRoutes: Routes = [
+    {path: 'details/:id', component: ProductDetailsComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     AllProductsComponent,
     ProductsFilterPipe,
-    SorterComponent
+    SorterComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductRepository],
   bootstrap: [AppComponent]
