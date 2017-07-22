@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { AllProductsComponent } from './all-products/all-products.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 import { ProductsFilterPipe } from './ProductsFilterPipe';
 
@@ -15,7 +16,8 @@ import { ProductsFilterPipe } from './ProductsFilterPipe';
     ProductsFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
