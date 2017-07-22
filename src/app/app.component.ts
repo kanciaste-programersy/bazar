@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component } from '@angular/core';
+import { Product } from './product.interface';
+import { ProductImpl } from './product.impl';
 
 @Component({
   selector: 'app-root',
@@ -7,20 +9,12 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class AppComponent {
 
-    public products: Array<Object> = [
-        { name: 'fidget spinner', price: 10.00, description: 'popularne w gimnazjum', promoted: true, image: 'default.png' },
-        { name: 'piłka', price: 20.00, description: 'Euro 2012', promoted: false, image: 'ball.jpg' },
-        { name: 'pizza', price: 27.00, description: 'Funghi na podójnym cieście. Dodatkowy ser i sos czosnkowy dla studentów GRATIS!', promoted: true, image: 'default.png' },
-        { name: 'skarpetki', price: 6.00, description: 'Czarno-niebieskie skarpetki do garnituru', promoted: false, image: 'socks.gif' }
+public products: Array<Product> = [
+        new ProductImpl('fidget spinner', 10.00, 'popularne w gimnazjum', true, 'default.png'),
+        new ProductImpl('piłka', 20.00, 'Euro 2012', false, 'ball.jpg'),
+        new ProductImpl('pizza', 27.00, 'Funghi na podójnym cieście. Dodatkowy ser i sos czosnkowy dla studentów GRATIS!', true, 'default.png'),
+        new ProductImpl('skarpetki', 6.00, 'Czarno-niebieskie skarpetki do garnituru', false, 'socks.gif')
     ];
 
-    public displayed: Array<Object> = this.products;
-
   title = 'app';
-
-    filterByName(event) {
-        let name = event.target.value;
-
-        this.displayed = this.products.filter(product => product['name'].indexOf(name) > -1);
-    }
 }
