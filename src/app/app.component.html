@@ -1,5 +1,1 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h2> Nazwa produktów: </h2>
-<div *ngFor="let product of products, index as i" [class.promoted]="product.promoted">
-  <h4>{{i}} {{ product.name }} ({{ product.price }} PLN)</h4>
-  <p>{{product.description}}</p>  </div>
+<app-all-products [products]="products"></app-all-products>
