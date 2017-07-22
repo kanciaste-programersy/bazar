@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ProductsFilterPipe } from './ProductsFilterPipe';
 import { SorterComponent } from './sorter/sorter.component';
 import {ProductRepository} from './product/product.repository';
+import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
   providers: [ProductRepository],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+[
+{
+    "name": "fidget spinner",
+    "price": 67,
+    "description": "popularne w gimnazjum",
+    "image": "default.png",
+    "promoted": true
+},
+{
+    "name": "piłka",
+    "price": 54,
+    "description": "Euro 2012",
+    "image": "ball.jpg",
+    "promoted": false
+},
+{
+    "name": "pizza",
+    "price": 24,
+    "description": "Czarno-niebieskie skarpetki do garnituru",
+    "image": "default.png",
+    "promoted": false
+},
+{
+    "name": "skarpetki",
+    "price": 10,
+    "description": "Czarno-niebieskie skarpetki do garnituru",
+    "image": "socks.gif",
+    "promoted": true
+}
+
+]

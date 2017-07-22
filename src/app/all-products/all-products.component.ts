@@ -16,11 +16,12 @@ export class AllProductsComponent implements OnInit {
 
   
   constructor() { 
-     this.searchterm.valueChanges.subscribe(value => {console.log(this.searchterm.value)
+     this.searchterm.valueChanges.subscribe(value => {
       this.collection = this.products.filter(
           book => { if(
-          book['name'].substr(0,this.searchterm.value.length) === this.searchterm.value ||
-          book['description'].substr(0,this.searchterm.value.length) === this.searchterm.value)
+            this.searchCond(book,'name') ||
+            this.searchCond(book,'description')
+          )
           return book});
     
   
@@ -38,6 +39,11 @@ export class AllProductsComponent implements OnInit {
   newList(){
     this.promo=!this.promo
     console.log(this.promo)
+}
+
+searchCond(ob, parameter){
+  if(ob[parameter].substr(0,this.searchterm.value.length) === this.searchterm.value)
+  return true
 }
 
 }
