@@ -9,10 +9,16 @@ import { Product } from '../product.interface';
 export class AllProductsComponent implements OnInit {
 
   @Input() public products: Array<Product>;
+  public promo = false;
   
   constructor() { }
 
   ngOnInit() {
   }
+
+  newList(){
+    this.promo=!this.promo
+    console.log(this.promo)
+}
 
 }

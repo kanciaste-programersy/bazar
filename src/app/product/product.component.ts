@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   constructor() { }
   
   @Input() public product: Product;
+  @Input() public promoted;
 
   ngOnInit() {
   }
