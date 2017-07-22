@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Product} from './product/product.class';
 
 @Component({
     selector: 'app-root',
@@ -6,23 +7,26 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    public productsList = [];
+    public products = [];
+    public promoted = [];
 
     constructor() {
         for (let i = 0; i < 15; i++) {
-            this.productsList.push(new Product('Product number ' + i));
+            this.products.push(
+                new Product(
+                    'http://lorempixel.com/250/250/?rand=' + i,
+                    'Product number ' + i,
+                    'jakiś tam opis ' + 1,
+                    20.5,
+                    (Boolean)(Math.random() * 2)
+                )
+            );
         }
+        let index = Math.random() * this.products.length;
+        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
+        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
+        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
+        this.promoted.push(this.products[Math.floor(Math.random() * this.products.length)]);
     }
 }
 
-interface ProductInteface {
-    name: string;
-}
-
-class Product implements ProductInteface {
-    public name: string;
-
-    constructor(name: string) {
-        this.name = name;
-    }
-}
