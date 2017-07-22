@@ -3,7 +3,9 @@ import { Product } from './product.interface';
 
 @Pipe({name: 'productsFilter'})
 export class ProductsFilterPipe implements PipeTransform {
-  transform(allProducts: Product[]) {
-    return allProducts.filter(product => product.promoted);
+  transform(allProducts: Product[], onlyPromoted: boolean) {
+    return allProducts.filter(
+      product => { return onlyPromoted ? product.promoted : true; }
+    );
   }
 }
