@@ -17,4 +17,8 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onBuy (button) {
+      alert("Dziękujemy za zakupu. Właśnie wyczyściliśmy Twoją kartę kredytową.");
+  }
+
 }
