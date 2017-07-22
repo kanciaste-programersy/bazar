@@ -23,7 +23,8 @@ export class AppComponent {
         //3/ 2. And we can use it to fetch data
         http.get('./../assets/products.json')
             .map(res => res.json())
-            .subscribe(todos =>{ this.products = todos});
+            .subscribe(todos =>{ this.products = todos 
+            console.log(todos)});
     }
 
 
