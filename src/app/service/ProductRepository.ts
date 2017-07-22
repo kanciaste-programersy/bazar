@@ -10,7 +10,11 @@ export class ProductRepository {
                 new Product(
                     'http://lorempixel.com/250/250/',
                     'Product number ' + i,
-                    'jakiś tam opis ' + 1,
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+                    'Duis volutpat nec orci dignissim sagittis. Pellentesque eget enim id diam ' +
+                    'pellentesque bibendum. Nullam gravida tempus vulputate. Duis mollis eget mi at' +
+                    ' fringilla. Proin in feugiat risus, non tempor est. Nunc venenatis facilisis nisi non tincidunt. ' +
+                    'Mauris hendrerit diam non odio congue consequat. ' + i,
                     parseFloat((Math.random() * 1000).toFixed(2)),
                     (Boolean)(Math.random() * 2)
                 )
